@@ -1,0 +1,10 @@
+.build/
+build/
+dist/
+.swiftpm/
+xcuserdata/
+*.xcuserstate
+DerivedData/
+.DS_Store
+Config/Local.env
+screenshots/
