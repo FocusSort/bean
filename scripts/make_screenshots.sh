@@ -6,13 +6,13 @@ cd "$(dirname "$0")/.."
 export DEVELOPER_DIR="${DEVELOPER_DIR:-/Applications/Xcode.app/Contents/Developer}"
 OUT="build/screenshots"
 mkdir -p "$OUT"
-# 1. CaffeineCore as a static library + module, exactly as the app imports it.
-swiftc -O -parse-as-library -emit-library -static -module-name CaffeineCore \
-  -emit-module -emit-module-path "$OUT/CaffeineCore.swiftmodule" \
-  -o "$OUT/libCaffeineCore.a" CaffeineCore/Sources/CaffeineCore/*.swift
+# 1. BeanCore as a static library + module, exactly as the app imports it.
+swiftc -O -parse-as-library -emit-library -static -module-name BeanCore \
+  -emit-module -emit-module-path "$OUT/BeanCore.swiftmodule" \
+  -o "$OUT/libBeanCore.a" BeanCore/Sources/BeanCore/*.swift
 # 2. The app's view files plus the renderer.
-swiftc -O -I "$OUT" -L "$OUT" -lCaffeineCore -framework IOKit -framework ServiceManagement \
+swiftc -O -I "$OUT" -L "$OUT" -lBeanCore -framework IOKit -framework ServiceManagement \
   -o "$OUT/make_screenshots" \
-  Caffeine/ContentView.swift Caffeine/SettingsStore.swift Caffeine/PrivacyWindow.swift \
-  Caffeine/AppDelegate.swift Caffeine/MenuBarIcon.swift scripts/screenshots/main.swift
+  Bean/ContentView.swift Bean/SettingsStore.swift Bean/PrivacyWindow.swift \
+  Bean/AppDelegate.swift Bean/MenuBarIcon.swift Bean/BeanGlyph.swift scripts/screenshots/main.swift
 "$OUT/make_screenshots" screenshots
