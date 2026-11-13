@@ -4,6 +4,11 @@ A tiny, free, open-source menu bar app that keeps your Mac awake.
 
 Click the bean, choose what to keep awake, press **Start**. Run until you stop it, or set a timer. There is no Dock icon and no window, and the app collects no data.
 
+<p>
+  <img src="docs/01-popover.png" width="286" alt="The Bean popover, ready to start: Display and Idle are checked and Run until I stop it is on">
+  <img src="docs/02-timer.png" width="286" alt="A 30-minute timed session running, with 29:50 remaining and a Stop button">
+</p>
+
 ## Features
 
 - **Five keep-awake options**, mix and match: display, idle sleep, disk, system sleep on AC power, and "user active".
